@@ -1,0 +1,96 @@
+#: kivy 1.8.0
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+<MainScreenManager>:
+    transition: SlideTransition()
+    ChooseRoleScreen:
+        name: "choose_role"
+    RunesBuildsScreen:
+        name: "runes_builds"
+
+
+<TransitionButton@Button>:
+    size_hint: 0.5, 0.5
+
+
+<CustomToggleButton@ToggleButton>:
+    size_hint: 0.5, 0.8
+
+
+<ChooseRoleScreen>:
+    dropdown_button: _dropdown_button
+    go_button: _go_button
+    champ_list: _champ_list
+
+    # on_parent: root.create_dropdown()
+
+	BoxLayout:
+        orientation: "vertical"
+        GridLayout:
+            rows: 1
+            cols: 2
+            # Select role
+            AnchorLayout:
+                Button:
+                    id: _dropdown_button
+        			text: "Select Role"
+                    size_hint_y: None
+                    size_hint_x: 0.8
+                    height: 44
+                    on_release: root.dropdown.open(self)
+
+            # Display champions
+            BoxLayout:
+                orientation: "vertical"
+                id: _champ_list
+
+                AnchorLayout:
+                    CustomToggleButton:
+                        id: champ0
+                        text: "Champ 0"
+                        group: "champions"
+                AnchorLayout:
+                    CustomToggleButton:
+                        id: champ1
+                        text: "Champ 1"
+                        group: "champions"
+                AnchorLayout:
+                    CustomToggleButton:
+                        id: champ2
+                        text: "Champ 2"
+                        group: "champions"
+                AnchorLayout:
+                    CustomToggleButton:
+                        id: champ3
+                        text: "Champ 3"
+                        group: "champions"
+                AnchorLayout:
+                    CustomToggleButton:
+                        id: champ4
+                        text: "Champ 4"
+                        group: "champions"
+
+        BoxLayout:
+            AnchorLayout:
+                TransitionButton:
+                    id: _go_button
+                    text: "Go!"
+                    disabled: True
+                    on_press: root.go_button_logic()
+            AnchorLayout:
+                TransitionButton:
+                    text: "See Runes and Builds"
+                    on_press:
+                        root.manager.transition.direction = "right"
+                        root.manager.current = "runes_builds"
+
+
+<RunesBuildsScreen>:
+    BoxLayout:
+        Button:
+            text: "Back"
+            on_press:
+                root.manager.transition.direction = "left"
+                root.manager.current = "choose_role"
+        Button:
+            text: "Button 1"
