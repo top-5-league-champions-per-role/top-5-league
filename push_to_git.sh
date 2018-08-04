@@ -10,10 +10,10 @@ if [[ $# -eq 0 ]]
 		exit 1
 fi
 
-COMMIT_MSG=\"$1\"  # save the commit messages to this variable
+COMMIT_MSG=$1  # save the commit messages to this variable
 
 git pull
 git add *
 # git status
-git commit -m $COMMIT_MSG
+git commit -m "$COMMIT_MSG"
 # git push
