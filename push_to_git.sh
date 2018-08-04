@@ -14,6 +14,6 @@ COMMIT_MSG=$1  # save the commit messages to this variable
 
 git pull
 git add *
-# git status
+git status
 git commit -m "$COMMIT_MSG"
-# git push
+git push
