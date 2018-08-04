@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# -z switch will test the expansion of "$1" string
-# Basically, it will check if the "$1" expansion is a null string or not
-if [[ -z $1 ]]
+# Check the number of arguments ($#)
+# If it is equal (-eq) to 0, then exit
+if [[ $# -eq 0 ]]
 	then
 		echo "No arguments supplied to the script. Sample usage:"
 		echo "./push_to_git.sh \"Your commit message here\""
@@ -10,11 +10,10 @@ if [[ -z $1 ]]
 		exit 1
 fi
 
-echo "*args: " $1
+COMMIT_MSG=\"$1\"  # save the commit messages to this variable
 
 git pull
-git status
 git add *
-git status
-git commit -m $1
-git push
+# git status
+git commit -m $COMMIT_MSG
+# git push

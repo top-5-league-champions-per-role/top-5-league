@@ -1,6 +1,18 @@
 # top-5-league
 Top 5 League Champions
 
+# How to Use the Git Script
+## Pre-Steps:
+1. Clone the repository into your local folder. NOTE: You only have to do this once! After you successfully cloned it into a local folder, you do not have to clone again.
+
+## Actual git-script usage test:
+1. Open up your git-bash. In Windows, you can right-click and click on "Open Git-Bash here." If this option is not available, please re-download Git.
+2. Type into the git-bash:
+```
+./push_to_git.sh "Your commit message here"
+```
+Please make sure you include the double quotes!
+
 # How to Install Kivy (Our GUI Framework)
 https://kivy.org/docs/installation/installation-windows.html
 
