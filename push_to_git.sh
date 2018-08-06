@@ -10,10 +10,16 @@ if [[ $# -eq 0 ]]
 		exit 1
 fi
 
-COMMIT_MSG=$1  # save the commit messages to this variable
+# Save the commit messages to this variable
+COMMIT_MSG=$1
 
+# Pull all the changes from the repo to the local repository
 git pull
+# Add all changed files to the current commit
 git add *
+# See the current status of the local repository
 git status
+# Commit all changes added
 git commit -a -m "$COMMIT_MSG"
+# Push the committed changes to the repository
 git push
