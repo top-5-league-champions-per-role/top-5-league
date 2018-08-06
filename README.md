@@ -1,9 +1,14 @@
-# top-5-league
-Top 5 League Champions
+# Top 5 League Champions
+Top 5 League Champions per role + their builds and runes.
 
 # How to Use the Git Script
 ## Pre-Steps:
-1. Clone the repository into your local folder. NOTE: You only have to do this once! After you successfully cloned it into a local folder, you do not have to clone again.
+**NOTE:** You only have to do the following steps ONCE! After the steps are successfully executed, you do not have to do these steps again in your local repository.
+
+1. Clone the repository into your local folder. 
+2. Set your 2 config settings
+  * `git config --global user.email "your GitHub email here"`
+  * `git config --global user.name "your GitHub username here"`
 
 ## Actual git-script usage test:
 1. Open up your git-bash. In Windows, you can right-click and click on "Open Git-Bash here." If this option is not available, please re-download Git.
@@ -12,6 +17,7 @@ Top 5 League Champions
 ./push_to_git.sh "Your commit message here"
 ```
 Please make sure you include the double quotes!
+
 
 # How to Install Kivy (Our GUI Framework)
 https://kivy.org/docs/installation/installation-windows.html
